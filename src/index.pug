@@ -1,0 +1,54 @@
+extends ./pug/templates/template
+block home
+   main
+      .hero
+         .container.h-100
+            .row.align-items-end.h-100
+               .col.text-center.text-md-right.text-white.py-4
+                  h1.heading Tu casa en el bosque
+                  p También construimos tu casa a tu gusto
+      .about-us.mt-5
+         .container
+            .row.bg-img.justify-content-lg-end.no-gutters
+               .col-md-8
+                  .bg-white.p-4.p-md-5
+                     h2.heading-2 Sobre Nosotros
+                     p Nam sit amet quam magna. Proin sed cursus justo. Nunc vitae dolor et nibh lacinia bibendum nec sit amet erat. Praesent id risus a odio condimentum venenatis at id nibh. Duis dolor dui, ultrices id fringilla et. Mauris malesuada ultrices facilisis.
+                     p Praesent id risus a odio condimentum venenatis at id nibh. Duis dolor dui, ultrices id fringilla et, porta ut felis. Mauris malesuada ultrices facilisis.
+      .models.my-5       
+         .container
+            .row
+               .col-md-6.pb-5
+                  h2.heading-2 Conoce Nuestros Modelos
+            .row.no-gutters.bg-img.basic.align-items-end
+               .col-md-6
+                  .bg-white.p-5.pl-lg-0
+                     h3.heading-3 Modelo Básico
+                     p Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum pellentesque vitae urna sit amet hendrerit. 
+                     a.btn.btn-outline-dark(href="#") Más información
+            .row.no-gutters.justify-content-md-end.my-5.bg-img.premier
+               .col-md-6
+                  .bg-white.p-5.pr-lg-0
+                     h3.heading-3 Modelo Premier
+                     p Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum pellentesque vitae urna sit amet hendrerit. 
+                     a.btn.btn-outline-dark(href="#") Más información
+            .row.no-gutters.bg-img.elite
+               .col-md-6
+                  .bg-white.p-5.pl-lg-0
+                     h3.heading-3 Modelo Elite
+                     p Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum pellentesque vitae urna sit amet hendrerit. 
+                     a.btn.btn-outline-dark(href="#") Más información
+      .gallery.my-5
+         .container
+            .row.mb-5
+               .col-md-6
+                  h2.heading-2 Galería de Imágenes
+            +gallery(
+               'galeria_1.jpg'
+               ,'galeria_2.jpg'
+               ,'galeria_3.jpg'
+               ,'galeria_4.jpg'
+               ,'galeria_5.jpg'
+               ,'galeria_6.jpg'
+               ,'galeria_7.jpg'
+            )

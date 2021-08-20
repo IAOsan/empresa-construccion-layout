@@ -1,0 +1,165 @@
+/* -------------------------------------------------------------------------- */
+/*                                   mixins                                   */
+/* -------------------------------------------------------------------------- */
+@mixin respond($breakpoint, $type: 'min-width') {
+   @media only screen and(#{$type}: #{$breakpoint / 16}em) {
+      @content;
+   }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  variables                                 */
+/* -------------------------------------------------------------------------- */
+:root {
+   --f-main: 'Raleway', sans-serif;
+   --border: 2px solid red;
+   --transition-s: all 500ms;
+}
+/* -------------------------------------------------------------------------- */
+/*                                    base                                    */
+/* -------------------------------------------------------------------------- */
+body {
+   font-family: var(--f-main);
+   font-weight: 400;
+}
+
+h1,
+h2,
+h3 {
+   font-weight: 900;
+}
+.phone {
+   &::before {
+      content: '';
+      margin-bottom: -0.25rem;
+      margin-right: 1rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      display: inline-block;
+      background: url('../assets/img/icono_telefono.png') center no-repeat;
+      background-size: contain;
+   }
+}
+.brand {
+   font-weight: 300;
+   font-size: 1.8rem;
+   @include respond(576) {
+      font-size: 2rem;
+   }
+   @include respond(768) {
+      font-size: 2.5rem;
+   }
+   span {
+      font-weight: 900;
+   }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 typography                                 */
+/* -------------------------------------------------------------------------- */
+.heading {
+   &-2 {
+      font-size: 3.6rem;
+   }
+   &-3 {
+      font-size: 3rem;
+   }
+}
+/* -------------------------------------------------------------------------- */
+/*                                   layout                                   */
+/* -------------------------------------------------------------------------- */
+.header {
+   background-color: #171717;
+   @include respond(992) {
+      background-color: transparent;
+      position: absolute;
+      width: 100%;
+   }
+   .nav-item {
+      @include respond(992) {
+         position: relative;
+         &:not(:first-child) {
+            border-left: 0.09rem solid #fff;
+         }
+      }
+   }
+   .nav-link {
+      padding: 0.4rem 1.5rem !important;
+   }
+}
+.navbar {
+   .navbar-collapse {
+      transition: var(--transition-s);
+   }
+}
+.footer {
+   height: 30rem;
+   background: url('../assets/img/footer_bg.jpg') center no-repeat;
+   background-size: cover;
+   .copyright {
+      background-color: #171717;
+   }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    home                                    */
+/* -------------------------------------------------------------------------- */
+.hero {
+   height: 60vh;
+   max-height: 35rem;
+   background: url('../assets/img/superior.jpg') bottom no-repeat;
+   background-size: cover;
+   @include respond(768) {
+      height: 40rem;
+   }
+   @include respond(992) {
+      max-height: 40rem;
+   }
+   .heading {
+      font-size: 2.5rem;
+   }
+}
+.about-us {
+   .bg-img {
+      min-height: 44rem;
+      background: url('../assets/img/nosotros.jpg') bottom left no-repeat;
+      background-size: contain;
+      @include respond(768) {
+         min-height: 36rem;
+         background-size: auto;
+      }
+   }
+}
+.models {
+   .bg-img {
+      min-height: 44rem;
+      @include respond(768) {
+         background-size: cover !important;
+      }
+      @include respond(992) {
+         background-size: auto !important;
+         min-height: 30rem;
+      }
+   }
+   .basic {
+      background: url('../assets/img/modelo_basico.jpg') no-repeat;
+      background-position: top;
+      @include respond(992) {
+         background-position: bottom right;
+      }
+   }
+   .premier {
+      background: url('../assets/img/modelo_premier.jpg') no-repeat;
+      background-position: bottom;
+      @include respond(992) {
+         background-position: center left;
+      }
+   }
+   .elite {
+      background: url('../assets/img/modelo_elite.jpg') no-repeat;
+      background-position: bottom right;
+      @include respond(992) {
+         background-position: center right;
+      }
+   }
+}

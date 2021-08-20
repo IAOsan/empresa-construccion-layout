@@ -1,0 +1,179 @@
+/* -------------------------------------------------------------------------- */
+/*                                   mixins                                   */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                                  variables                                 */
+/* -------------------------------------------------------------------------- */
+:root {
+  --f-main: "Raleway", sans-serif;
+  --border: 2px solid red;
+  --transition-s: all 500ms;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    base                                    */
+/* -------------------------------------------------------------------------- */
+body {
+  font-family: var(--f-main);
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 900;
+}
+
+.phone::before {
+  content: "";
+  margin-bottom: -0.25rem;
+  margin-right: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  background: url("../assets/img/icono_telefono.png") center no-repeat;
+  background-size: contain;
+}
+
+.brand {
+  font-weight: 300;
+  font-size: 1.8rem;
+}
+@media only screen and (min-width: 36em) {
+  .brand {
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .brand {
+    font-size: 2.5rem;
+  }
+}
+.brand span {
+  font-weight: 900;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 typography                                 */
+/* -------------------------------------------------------------------------- */
+.heading-2 {
+  font-size: 3.6rem;
+}
+.heading-3 {
+  font-size: 3rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   layout                                   */
+/* -------------------------------------------------------------------------- */
+.header {
+  background-color: #171717;
+}
+@media only screen and (min-width: 62em) {
+  .header {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .header .nav-item {
+    position: relative;
+  }
+  .header .nav-item:not(:first-child) {
+    border-left: 0.09rem solid #fff;
+  }
+}
+.header .nav-link {
+  padding: 0.4rem 1.5rem !important;
+}
+
+.navbar .navbar-collapse {
+  transition: var(--transition-s);
+}
+
+.footer {
+  height: 30rem;
+  background: url("../assets/img/footer_bg.jpg") center no-repeat;
+  background-size: cover;
+}
+.footer .copyright {
+  background-color: #171717;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    home                                    */
+/* -------------------------------------------------------------------------- */
+.hero {
+  height: 60vh;
+  max-height: 35rem;
+  background: url("../assets/img/superior.jpg") bottom no-repeat;
+  background-size: cover;
+}
+@media only screen and (min-width: 48em) {
+  .hero {
+    height: 40rem;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .hero {
+    max-height: 40rem;
+  }
+}
+.hero .heading {
+  font-size: 2.5rem;
+}
+
+.about-us .bg-img {
+  min-height: 44rem;
+  background: url("../assets/img/nosotros.jpg") bottom left no-repeat;
+  background-size: contain;
+}
+@media only screen and (min-width: 48em) {
+  .about-us .bg-img {
+    min-height: 36rem;
+    background-size: auto;
+  }
+}
+
+.models .bg-img {
+  min-height: 44rem;
+}
+@media only screen and (min-width: 48em) {
+  .models .bg-img {
+    background-size: cover !important;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .models .bg-img {
+    background-size: auto !important;
+    min-height: 30rem;
+  }
+}
+.models .basic {
+  background: url("../assets/img/modelo_basico.jpg") no-repeat;
+  background-position: top;
+}
+@media only screen and (min-width: 62em) {
+  .models .basic {
+    background-position: bottom right;
+  }
+}
+.models .premier {
+  background: url("../assets/img/modelo_premier.jpg") no-repeat;
+  background-position: bottom;
+}
+@media only screen and (min-width: 62em) {
+  .models .premier {
+    background-position: center left;
+  }
+}
+.models .elite {
+  background: url("../assets/img/modelo_elite.jpg") no-repeat;
+  background-position: bottom right;
+}
+@media only screen and (min-width: 62em) {
+  .models .elite {
+    background-position: center right;
+  }
+}

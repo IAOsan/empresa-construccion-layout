@@ -1,0 +1,33 @@
+mixin navbar(collapse=true, id="id", rowclass="", navclass="", linksclass="", ...links)
+   .row(class=rowclass)
+      .col-lg-5.text-center.text-lg-left
+         a.brand.text-white(href="index.html")
+            |Arquitectura
+            span Bosque
+      .col-lg-7.text-white
+         p.m-0.phone.text-center.text-lg-right 01-800-000-000
+         nav.navbar.navbar-dark(class=navclass)
+            if collapse
+               button.navbar-toggler.mx-auto(type="button" data-toggle="collapse" data-target=`#${id}` aria-controls=id aria-expanded="false" aria-label="Mostrar navegacion")
+                  span.navbar-toggler-icon
+               .collpase.navbar-collapse(id=id)
+                  ul.navbar-nav.justify-content-center.justify-content-lg-end.text-center.w-100
+                     each link in links
+                        li.nav-item
+                           a.nav-link.text-white(class=linksclass href=link.url) #{link.name}
+            else 
+               ul.navbar-nav.justify-content-center.justify-content-lg-end.text-center.w-100
+                  each link in links
+                     li.nav-item
+                        a.nav-link.text-white(class=linksclass href=link.url) #{link.name}
+
+mixin gallery(...images)
+   .card-columns
+      each image,index in images
+         .card
+            a(href="#" data-toggle="modal" data-target=`#galleryImage${index+1}`) 
+               img.card-img-top(src=`assets/img/${image}`, alt="")
+         .modal.fade(id=`galleryImage${index+1}` tabindex="-1" aria-hidden="true")
+            .modal-dialog.modal-dialog-centered
+               .modal-content 
+                  img.w-100.h-100(src=`assets/img/${image}`, alt="")
